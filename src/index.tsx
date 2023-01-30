@@ -26,7 +26,7 @@ try {
 async function init() {
     const response = await fetch("color/list.txt");
     const pregenerated_list = (await response.text()).trim().split('\n')
-        .map(line => line.substring(0, line.length - 4)); // remove extension
+        .map(line => line.substring(0, line.length - 4)); // remove file extension
 
     createRoot(document.getElementById('root')!).render(
         <App pregenerated={pregenerated_list}/>
